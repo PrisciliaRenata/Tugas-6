@@ -1,0 +1,23 @@
+<?php
+
+route('login', 'get', 'AuthController::login');
+route('login', 'post', 'AuthController::sessionLogin');
+route('register', 'get', 'AuthController::register');
+route('register', 'post', 'AuthController::newRegister');
+route('logout', 'get', 'AuthController::logout');
+
+
+route('dashboard', 'get', 'DashboardController::index');
+route('dashboard/add-contact', 'post', 'ContactController::createContact');
+route('dashboard/edit-contact', 'post', 'ContactController::updateContact');
+route('dashboard/delete-contact', 'post', 'ContactController::deleteContact');
+
+route('/', 'get', function () ){
+    header('Location: dashboard'); }
+
+    
+route('dashboard/profile', 'get', 'DashboardController::profile');
+route('dashboard/settings', 'get', 'DashboardController::settings');
+route('dashboard/messages', 'get', 'MessageController::index');
+
+?>
